@@ -30,4 +30,40 @@ fun main() {
     isBool = testNumbForBooleanVar % 2 == 0
     println(isBool)
 
+    //Символьная история
+    /**
+     * тип чар поддерживает управляющие символы \t, \b, \n, \t, \', \", \\ и \$
+     * можно конвертировать в Int. Результатом будет код этого символа в таблице символов Unicode
+     * */
+
+    val charSymbol: Char = 'A'
+    val charC = charSymbol + 2
+    val letterByCode: Char = Char(42)
+    println(charC)
+    println(letterByCode)
+
+    //Строки
+    /**
+     *
+     * */
+    //Длина строки $str$ - $length$ символов
+    val longStr: String = "The longest str you've ever seen"
+//    var resultString = "Length of " + "\"" + longStr + "\"" + longStr.length + " symbols."
+//    println(resultString)
+    val resultString = "Length of \"$longStr\" - ${longStr.length} symbols"
+    println(resultString)
+
+    val testStr = "Hello Kotlin!"
+    println(testStr.contains("H"))
+    println(testStr.contains("kotlin"))
+    println(testStr.contains("kotlin", true))
+    println(testStr.contains("world"))
+    println()
+    println(testStr.replace('l', 'L'))
+    println(testStr.replace("l", "WOW"))
+    println(testStr.replaceFirst("l", "WOW"))
+    println(testStr.replaceFirst("Hel", "Dow"))
+    println(testStr.replaceFirst("Kotlin", "Popkin"))
+
 }
+

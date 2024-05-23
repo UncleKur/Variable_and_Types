@@ -9,13 +9,12 @@ fun main() {
     val day5Earnings = calculateEarningPerDay(3, 7)
     val day6Earnings = calculateEarningPerDay(0, 0)
 
-    val actualEarnings = (day1Earnings + day2Earnings + day3Earnings + day4Earnings + day5Earnings + day6Earnings) / 5f
+    val actualEarnings = (day1Earnings + day2Earnings + day3Earnings + day4Earnings + day5Earnings + day6Earnings) / 6f
 
     val isPromiseFulfilled = actualEarnings >= expectedEarnings
 
     println(actualEarnings)
     println(isPromiseFulfilled)
-
 }
 
 fun calculateEarningPerDay(goodSteelWeight: Int, badSteelWeight: Int): Int {
