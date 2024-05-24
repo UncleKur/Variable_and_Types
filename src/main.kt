@@ -65,5 +65,39 @@ fun main() {
     println(testStr.replaceFirst("Hel", "Dow"))
     println(testStr.replaceFirst("Kotlin", "Popkin"))
 
+    //Nullable типы
+    //Null - это отсутствие ссылки у переменной (не ссылается ни на какую область памяти
+    // "?." - safe-call оператор
+
+    var notNullString: String = "I'm not nullable"
+    var nullableString: String? = null
+    var nullableString2: String?
+    var nullableString3: String? = "Hello"
+
+    println(nullableString?.uppercase())
+    // println(nullableString2?.uppercase()) //must be initialized
+    println(nullableString3?.uppercase())
+    if (nullableString3 != null) {
+        println(nullableString3.uppercase()) //safe-call оператор уже не используется после явной проверки
+    }
+
+    // "?:" - элвис оператор. Если значение не null, в нём используется значение переменной, если null, то значение справа
+    var profession1: String? = "Крановщик"
+    var profession2: String? = null
+    val defaultAnswer = "Не указано"
+    println(profession1 ?: defaultAnswer)
+    println(profession2 ?: defaultAnswer)
+
+    // "!!" - это не null
+    //    val nullableString: String? = "not null string"
+    //    val newString: String = nullableString так компилятор не даст собрать программу
+
+    //Но прямо здесь в коде мы ввели её значение и точно знаем, что она не null,
+    //поэтому можем с уверенностью применить оператор «!!»
+    val nullableStringAssertOperator: String? = "not null string"
+    val newString: String = nullableStringAssertOperator!!
+    // но если в nullableStringAssertOperator попадёт null - программа крашнется
+    val nullableStringAssertOperatorCrashTest: String? = null
+    val newStringCrash: String = nullableStringAssertOperatorCrashTest!!
 }
 
